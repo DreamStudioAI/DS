@@ -31,6 +31,6 @@ ds.rmdir <- function(path="NULL",dirName){
 
 ### ds.mkdir.RSol ----
 ds.mkdir.RSol <- function(path="NULL"){
-  dirName <- c("RCodes","RData","Shell","PyScripts","SQLScripts","Doc")
+  dirName <- c("RCodes","RData","Shell","PyScripts","SQLScripts","Doc","Input","Output")
   ds.mkdir(path = path,dirName = dirName)
 }
