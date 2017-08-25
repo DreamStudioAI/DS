@@ -213,14 +213,28 @@ ds.getRandomWght <- function(size,scale=100) {
 }
 
 ### ds.annReturn ----
-# calculate the annual return for a trading value sequence
-ds.annReturn <- function(vData,scale=252,geometric=TRUE) {
-  R <- diff(vData)/vData[1:(length(vData)-1)]
-  vYears <- NROW(vData)/scale
-  if(geometric==TRUE){
-    vAnn <- last(vData)^(1/vYears)-1
-  }else vAnn <- mean(R)*scale
-  return(vAnn)
+# type=seq : calculate the annual return for a trading value sequence
+# type=single,len=? : calculate the annual return for a value within len years
+# type=single,geometric=FALSE,len=? : when the interval is less than 1 year,
+# len denotes len days
+# e.g.
+# ds.annReturn(1.3,type="single",geometric=FALSE,len=100)
+ds.annReturn <- function(vData,scale=252,geometric=TRUE,type="seq",len=1) {
+  if(type=="seq"){
+    R <- diff(vData)/vData[1:(length(vData)-1)]
+    vYears <- NROW(vData)/scale
+    if(geometric==TRUE){
+      vAnn <- (last(vData)/first(vData))^(1/vYears)-1
+    }else vAnn <- mean(R)*scale
+    return(vAnn)
+  }
+  if(type=="single"){
+    vYears <- len
+    if(geometric==TRUE){
+      vAnn <- last(vData)^(1/vYears)-1
+    }else vAnn <- (last(vData)-1)/len*scale
+    return(vAnn)
+  }
 }
 
 ### ds.sharpeRatio ----
