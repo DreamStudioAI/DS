@@ -197,6 +197,8 @@ ds.writeSQL.Data <- function(conf,vTable,vInsertData,apnd=TRUE,overwrte=FALSE,ro
 ### ds.getRandomWght ----
 # get the random weights array such that the sum of them is 1
 ds.getRandomWght <- function(size,scale=100) {
+  if (size == 1)
+    return(1)
   x <- c()
   vWght.all <- 1:scale / scale
   for (i in 1:(size - 1)) {
