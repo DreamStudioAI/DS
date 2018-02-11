@@ -1,7 +1,7 @@
 Package: DS
 Type: Package
 Title: Dream Studio Data Science R Package
-Version: 0.3.1
+Version: 0.3.2
 Date: 2018-01-30
 Author: Davy Zhu
 Maintainer: Davy Zhu <dreamstudio@vip.163.com>

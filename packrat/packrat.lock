@@ -1,0 +1,20 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.8.1
+RVersion: 3.4.3
+Repos: CRAN=https://cran.rstudio.com/
+
+Package: DBI
+Source: CRAN
+Version: 0.7
+Hash: 1ab72df487f06ad5f0de05446cdd4bd6
+
+Package: RMySQL
+Source: CRAN
+Version: 0.10.13
+Hash: 9cb5f1692b33d3c6b981e5e1e95abee6
+Requires: DBI
+
+Package: packrat
+Source: CRAN
+Version: 0.4.8-1
+Hash: 6ad605ba7b4b476d84be6632393f5765

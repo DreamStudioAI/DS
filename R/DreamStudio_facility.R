@@ -538,3 +538,14 @@ ds.sample.F <- function(n,breaks,F_density) {
   sam <- sapply(x,ds.inv_F,breaks,F_density)
   return(sam)
 }
+
+### ds.getInfoEntropy ----
+# Calculate the information entropy for a probability distribution vP
+# sum(vP) should be 1
+# ds.getInfoEntropy(.5,.5) = 1
+# ds.getInfoEntropy(1) = 0
+ds.getInfoEntropy <- function(vP) {
+  if (sum(vP) != 1)
+    stop("Accumulated Probability distribution vP is not equal to 1")
+  return(-sum(vP * log2(vP)))
+}
