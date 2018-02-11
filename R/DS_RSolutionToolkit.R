@@ -83,10 +83,10 @@ vCurTime,
 
 ### Get facility and data file ----
 source("',
-vRcodes.prep.file,
+vRcodes.facilities.file,
 '")
 source("',
-vRcodes.facilities.file,
+vRcodes.prep.file,
 '")
 
 ### Load RData ----',
